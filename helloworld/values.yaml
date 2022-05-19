@@ -10,6 +10,12 @@ imagePullSecrets:
 nameOverride: "ken-first-helm"
 fullnameOverride: "ken-first-helm"
 containerPort: "5000"
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: "ken-first-helm"
+
 podAnnotations: {}
 podSecurityContext: {}
 securityContext: {}
@@ -30,6 +36,7 @@ ingress:
         - path: /
           pathType: Prefix
   tls: []
+
 resources: {}
 nodeSelector: {}
 tolerations: []
