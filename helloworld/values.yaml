@@ -7,8 +7,8 @@ image:
 
 imagePullSecrets:
   - name: ken-docker
-nameOverride: "ken-first-helm"
-fullnameOverride: "ken-first-helm"
+nameOverride: "first-helm"
+fullnameOverride: "first-helm"
 containerPort: "5000"
 
 service:
