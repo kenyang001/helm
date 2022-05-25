@@ -9,7 +9,7 @@ image:
 imagePullSecrets:
   - name: ken-docker
 nameOverride: "hellworld5"
-fullnameOverride: "hellworld6"
+fullnameOverride: "hellworld6"  #highest priority
 containerPort: "5000"
 
 serviceAccount:
@@ -53,8 +53,3 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
 
 
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
