@@ -8,8 +8,8 @@ image:
 
 imagePullSecrets:
   - name: ken-docker
-nameOverride: "hellworld4"
-fullnameOverride: "hellworld4"
+nameOverride: "hellworld5"
+fullnameOverride: "hellworld6"
 containerPort: "5000"
 
 serviceAccount:
