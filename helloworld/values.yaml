@@ -7,8 +7,8 @@ image:
 
 imagePullSecrets:
   - name: ken-docker
-nameOverride: "ken-first-helm"
-fullnameOverride: "ken-first-helm"
+nameOverride: "helloworld4"
+fullnameOverride: "hellworld4"
 containerPort: "5000"
 
 serviceAccount:
@@ -38,6 +38,9 @@ ingress:
   tls: []
 
 resources: {}
+
 nodeSelector: {}
+
 tolerations: []
+
 affinity: {}
