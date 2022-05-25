@@ -13,7 +13,7 @@ containerPort: "5000"
 
 serviceAccount:
   create: false
-  annotations: {}
+#  annotations: {}
   name: "default"
 
 service:
@@ -31,7 +31,7 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
-  tls: []
+#  tls: []
 
 autoscaling:
   enabled: false
