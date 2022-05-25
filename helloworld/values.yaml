@@ -3,7 +3,6 @@ replicaCount: 1
 image:
   repository: kenyang001/dm
   pullPolicy: Always
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "milestones_131"
 
 imagePullSecrets:
@@ -16,11 +15,6 @@ serviceAccount:
   create: false
   annotations: {}
   name: "default"
-
-podAnnotations: {}
-
-podSecurityContext: {}
-
 
 service:
   type: ClusterIP
@@ -38,9 +32,3 @@ ingress:
         - path: /
           pathType: Prefix
   tls: []
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
