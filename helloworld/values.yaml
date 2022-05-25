@@ -22,9 +22,6 @@ podAnnotations: {}
 podSecurityContext: {}
 
 
-securityContext: {}
-
-
 service:
   type: ClusterIP
   port: 5000
@@ -42,14 +39,8 @@ ingress:
           pathType: Prefix
   tls: []
 
-
-resources: {}
-
-
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
-
-
