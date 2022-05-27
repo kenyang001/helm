@@ -28,7 +28,7 @@ ingress:
   hosts:
     - host: testbyken3.dragonmetrics-static.com
       paths:
-        - path: /
+        - path: /docs
           pathType: Prefix
 
 autoscaling:
