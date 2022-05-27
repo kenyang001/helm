@@ -10,8 +10,8 @@ imagePullSecrets:
 nameOverride: "container-name"   #container name, can keep this by default,for selector lable
 fullnameOverride: "hellworld6"   # workload/deployment name, you have to change it for unique name,for selector lable
 containerPort: "5000"
-livenessProbePath: "/docs"
-readinessProbePath: "/docs"
+livenessProbePath: /docs
+readinessProbePath: /docs
 
 
 
@@ -32,7 +32,7 @@ ingress:
   hosts:
     - host: testbyken3.dragonmetrics-static.com
       paths:
-        - path: /docs
+        - path: /
           pathType: Prefix
 
 autoscaling:
