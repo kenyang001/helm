@@ -6,10 +6,14 @@ image:
   tag: "ops_383"
 
 imagePullSecrets:
-  - name: ken-docker
-nameOverride: "helloworld5"  
-fullnameOverride: "hellworld6"  
+  - name: ken-docker  
+nameOverride: "helloworld5"   #container name, can keep this by default
+fullnameOverride: "hellworld6"   # workload/deployment name, you have to change it for unique name
 containerPort: "5000"
+livenessProbePath: "/docs"
+readinessProbePath: "/docs"
+
+
 
 serviceAccount:
   create: false
@@ -28,7 +32,7 @@ ingress:
   hosts:
     - host: testbyken3.dragonmetrics-static.com
       paths:
-        - path: /docs
+        - path: /
           pathType: Prefix
 
 autoscaling:
