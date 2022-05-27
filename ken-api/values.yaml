@@ -1,0 +1,39 @@
+replicaCount: 1
+
+image:
+  repository: kenyang001/dm
+  pullPolicy: Always
+  tag: "ops_383"
+
+imagePullSecrets:
+  - name: ken-docker  
+nameOverride: "container-name"   #container name, can keep this by default,for selector lable
+fullnameOverride: "hellworld6"   # workload/deployment name, you have to change it for unique name,for selector lable
+containerPort: "5000"
+livenessProbePath: /docs
+readinessProbePath: /docs
+
+
+
+serviceAccount:
+  create: false
+  name: "default"
+
+service:
+  type: ClusterIP
+  port: 5000
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    kubernetes.io/ingress.class: nginx
+
+  hosts:
+    - host: testbyken3.dragonmetrics-static.com
+      paths:
+        - path: /
+          pathType: Prefix
+
+autoscaling:
+  enabled: false
