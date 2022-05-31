@@ -2,15 +2,21 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: dm-api-1
-  namespace: dm-api-argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  namespace: helloworld
+  #finalizers:  commented by ken
+  #- resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: dm-api-deployment
+    namespace: helloworld
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
     path: dm-api-1
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
+
+  syncPolicy: # added by ken
+    automated:
+        prune: true
+        allowEmpty: true
+        selfHeal: true
